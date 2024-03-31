@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Web Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        .detailsContainer {
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.488));
+        }
+        
+        .heart{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            rotate:45deg;
+           
+            z-index: 10;
+        }
+        .heart::before{
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+            z-index: 10;
+            transform: translate(-50%,0);
+
+        }
+        .heart::after{
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+            z-index: 10;
+            transform: translate(0,-50%);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main w-full h-screen bg-black   font-['Arial'] relative">
+            <div class="heart absolute top-1/2 left-[40%] -translate-x-1/2 -translate-y-1/2 opacity-0"></div>
+        
+        <div class="imageContainer w-full h-screen relative overflow-hidden">
+            <div class=" mainCard z-[3] absolute w-[130%] h-[130%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                <img class="w-full h-full object-cover" src="" alt="">
+            </div>
+            <div
+                class=" incommingCard z-[2]  absolute w-[130%] h-[130%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                <img class=" w-[120%] h-[120%] object-cover" src="" alt="">
+            </div>
+        </div>
+        <div class="screen absolute top-0 left-0 w-full h-screen z-[4] flex flex-col justify-between">
+            <div class="nav flex items-center justify-between px-5 py-5">
+                <div class="Profile w-[3rem] h-[3rem] overflow-hidden rounded-full ">
+                    <img class="w-full h-full object-cover" src="" alt="">
+
+                </div>
+                <h1 class="text-white text-[1.3rem] font-semibold tracking-tighter">they like you</h1>
+                <div
+                    class="chatIcon w-[3rem] h-[3rem] rounded-full bg-white/5  flex items-center justify-center relative">
+                    <i class="ri-chat-3-fill text-white opacity-80"></i>
+                    <div
+                        class="badge absolute top-0 right-0 -translate-y-[5px]  opacity-100 translate-x-[2px]  rounded-full w-[1.5rem] h-[1.5rem] bg-red-500 flex items-center justify-center">
+                        <h5 class="font-semibold text-white text-[0.8rem]">5</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class=" detailsContainer w-full  ">
+                <div class=" element details w-full  px-3">
+                    <div class=" location flex gap-2 items-center">
+                        <i
+                            class=" w-[2rem] h-[2rem] flex items-center justify-center rounded-full font-bold bg-white ri-corner-left-up-line"></i>
+                        <h1 class="text-white text-[0.8rem]">USA,Coniforniya</h1>
+                    </div>
+                </div>
+                <div class=" element  hel flex gap-6 items-center mx-3">
+                    <h1 class=" text-[3.5rem] tracking-tighter font-400 text-white uppercase">Harshita</h1>
+                    <h2 class="text-[3.5rem] tracking-tighter font-semibold text-white opacity-60">20</h2>
+                </div>
+                <div class=" element tags flex gap-5 items-center justif-between text-white mx-3 ">
+                    <!-- <div class="tag flex gap-2 items-center  bg-white/30 py-1 px-5 rounded-full">
+                        <i class="ri-music-fill"></i>
+                        <h3 class="text-sm tracking-tighter">Music</h3>
+                    </div>
+                    <div class="tag flex gap-2 items-center  bg-white/30 py-1 px-5 rounded-full">
+                        <i class="ri-mail-check-line"></i>
+                        <h3 class="text-sm tracking-tighter">Painting</h3>
+                    </div> -->
+
+                </div>
+                <div class=" element bio mt-3 mx-3">
+                    <h1 class="text-white font-semibold text-[2rem]">Bio</h1>
+                    <p class="text-white text-sm font-['Arial'] opacity-80 px-2">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Illum autem quod, porro aperiam sit
+                        quia et assumenda iure dolores eveniet ?</p>
+                </div>
+                <div class=" element flex items-start my-6 mx-2 gap-3 ">
+                <button class=" reject w-1/2 py-3 bg-white rounded-[10px]">
+                        <i class="text-[1.5rem] ri-close-line"></i>
+                </button>
+                <button class="accept  w-1/2 py-3 bg-[#FC5149] rounded-[10px]">
+                        <i class="text-[1.5rem] text-white ri-heart-2-fill"></i>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
